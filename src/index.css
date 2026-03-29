@@ -1,0 +1,687 @@
+/* ============================================================
+   THEME VARIABLES
+   ============================================================ */
+
+[data-theme="dark"] {
+  --bg: #0a0f1e;
+  --bg-surface: #111827;
+  --bg-card: #1a2235;
+  --border: rgba(255, 255, 255, 0.08);
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #475569;
+  --accent: #6366f1;
+  --accent-hover: #4f46e5;
+  --accent-glow: rgba(99, 102, 241, 0.35);
+  --navbar-bg: rgba(17, 24, 39, 0.8);
+  --select-bg: #1a2235;
+}
+
+[data-theme="light"] {
+  --bg: #f8fafc;
+  --bg-surface: #ffffff;
+  --bg-card: #f1f5f9;
+  --border: rgba(0, 0, 0, 0.08);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --accent-glow: rgba(79, 70, 229, 0.2);
+  --navbar-bg: rgba(248, 250, 252, 0.85);
+  --select-bg: #f1f5f9;
+}
+
+[data-theme="cyberpunk"] {
+  --bg: #000000;
+  --bg-surface: #0d0d0d;
+  --bg-card: #111111;
+  --border: rgba(255, 220, 0, 0.25);
+  --text-primary: #ffdc00;
+  --text-secondary: #ff2d78;
+  --text-muted: #555555;
+  --accent: #ff2d78;
+  --accent-hover: #e0005a;
+  --accent-glow: rgba(255, 45, 120, 0.4);
+  --navbar-bg: rgba(0, 0, 0, 0.9);
+  --select-bg: #111111;
+}
+
+[data-theme="fallout"] {
+  --bg: #0a0f00;
+  --bg-surface: #0f1a00;
+  --bg-card: #141f00;
+  --border: rgba(80, 200, 80, 0.2);
+  --text-primary: #50c850;
+  --text-secondary: #3a9e3a;
+  --text-muted: #2a6e2a;
+  --accent: #50c850;
+  --accent-hover: #3aaa3a;
+  --accent-glow: rgba(80, 200, 80, 0.3);
+  --navbar-bg: rgba(10, 15, 0, 0.9);
+  --select-bg: #141f00;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--accent-hover);
+}
+
+/* ============================================================
+   SHARED PAGE STYLES
+   ============================================================ */
+
+.page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(48px, 8vw, 120px) clamp(24px, 6vw, 96px);
+}
+
+.page-header {
+  max-width: 900px;
+  padding-bottom: clamp(48px, 8vw, 96px);
+  border-bottom: 1px solid var(--border);
+  margin-bottom: clamp(48px, 8vw, 96px);
+}
+
+.page-header h1 {
+  font-size: clamp(2.8rem, 6vw, 6rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+/* ============================================================
+   PROJECTS PAGE
+   ============================================================ */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.project-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.project-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0;
+}
+
+.project-link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--accent);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.project-link:hover {
+  color: var(--accent-hover);
+}
+
+.project-card p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* ============================================================
+   ABOUT PAGE
+   ============================================================ */
+
+.about-links {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 1px solid var(--accent);
+  color: var(--accent);
+}
+
+.btn-outline:hover {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+.about-body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(48px, 8vw, 96px);
+}
+
+.about-section {
+  max-width: 900px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px;
+}
+
+.skill-group {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.skill-category {
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent);
+}
+
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.timeline-entry {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 32px;
+  padding: 32px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.timeline-entry:first-child {
+  border-top: 1px solid var(--border);
+}
+
+.timeline-year {
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  padding-top: 4px;
+  letter-spacing: 0.05em;
+}
+
+.timeline-title {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.timeline-subtitle {
+  font-size: 0.85rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.timeline-description {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+@media (max-width: 600px) {
+  .timeline-entry {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+  padding: 0 clamp(16px, 4vw, 48px);
+  background-color: var(--navbar-bg);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border);
+  transition: background-color 0.3s ease;
+}
+
+.navbar-card {
+  max-width: 1400px;
+  margin: 0 auto;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.logo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  letter-spacing: -0.02em;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 32px;
+}
+
+.nav-link a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--text-secondary);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  transition: color 0.2s ease;
+}
+
+.nav-link a:hover {
+  color: var(--text-primary);
+}
+
+.theme-select {
+  appearance: none;
+  background-color: var(--select-bg);
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 32px 6px 12px;
+  font-size: 0.85rem;
+  font-family: inherit;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%23888' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  transition: border-color 0.2s ease;
+  flex-shrink: 0;
+}
+
+.theme-select:hover {
+  border-color: var(--accent);
+}
+
+.theme-select:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* ============================================================
+   HOME PAGE
+   ============================================================ */
+
+.home {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: clamp(48px, 8vw, 120px) clamp(24px, 6vw, 96px);
+}
+
+/* Hero */
+.hero {
+  padding-bottom: clamp(48px, 8vw, 96px);
+  border-bottom: 1px solid var(--border);
+  max-width: 900px;
+}
+
+.hero-label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 24px;
+}
+
+.home h1 {
+  font-size: clamp(2.8rem, 6vw, 6rem);
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 24px;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  color: var(--text-secondary);
+  max-width: 560px;
+  line-height: 1.7;
+  margin-bottom: 40px;
+}
+
+.cta {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 32px;
+  background-color: var(--accent);
+  color: #fff;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: var(--accent-hover);
+  color: #fff;
+  box-shadow: 0 8px 24px var(--accent-glow);
+  transform: translateY(-2px);
+}
+
+/* Features */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2px;
+  margin-top: 2px;
+  border-top: 1px solid var(--border);
+}
+
+.feature {
+  padding: clamp(32px, 4vw, 48px) clamp(24px, 3vw, 40px);
+  border-right: 1px solid var(--border);
+  transition: background-color 0.2s ease;
+}
+
+.feature:last-child {
+  border-right: none;
+}
+
+.feature:hover {
+  background-color: var(--bg-card);
+}
+
+.feature-number {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.feature h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+
+.feature p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ============================================================
+   PROJECT CARDS
+   ============================================================ */
+
+.project-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin-top: 1.5rem;
+  transition: border-color 0.2s ease;
+}
+
+.project-card:hover {
+  border-color: var(--accent);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: var(--text-primary);
+}
+
+.tech-list {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: 0;
+  margin-top: 1rem;
+}
+
+.tech-list li {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .nav-links {
+    gap: 20px;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    border-top: none;
+  }
+
+  .feature {
+    border-right: none;
+    border-top: 1px solid var(--border);
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-links {
+    display: none;
+  }
+
+  .navbar-card {
+    justify-content: space-between;
+  }
+}
+
+/* ============================================================
+   CYBERPUNK GLITCH EFFECT
+   ============================================================ */
+
+[data-theme="cyberpunk"] h1 {
+  position: relative;
+}
+
+[data-theme="cyberpunk"] h1::before,
+[data-theme="cyberpunk"] h1::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+}
+
+[data-theme="cyberpunk"] h1::before {
+  color: #ff2d78;
+  animation: glitch-1 8s infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 40%, 0 40%);
+}
+
+[data-theme="cyberpunk"] h1::after {
+  color: #00fff9;
+  animation: glitch-2 8s infinite;
+  clip-path: polygon(0 60%, 100% 60%, 100% 100%, 0 100%);
+}
+
+@keyframes glitch-1 {
+
+  0%,
+  92%,
+  100% {
+    opacity: 0;
+    transform: none;
+  }
+
+  93% {
+    opacity: 0.8;
+    transform: translateX(-3px);
+  }
+
+  94% {
+    opacity: 0.8;
+    transform: translateX(3px);
+  }
+
+  95% {
+    opacity: 0;
+    transform: none;
+  }
+
+  97% {
+    opacity: 0.6;
+    transform: translateX(-2px);
+  }
+
+  98% {
+    opacity: 0;
+    transform: none;
+  }
+}
+
+@keyframes glitch-2 {
+
+  0%,
+  92%,
+  100% {
+    opacity: 0;
+    transform: none;
+  }
+
+  93% {
+    opacity: 0.8;
+    transform: translateX(3px);
+  }
+
+  94% {
+    opacity: 0.8;
+    transform: translateX(-3px);
+  }
+
+  95% {
+    opacity: 0;
+    transform: none;
+  }
+
+  97% {
+    opacity: 0.6;
+    transform: translateX(2px);
+  }
+
+  98% {
+    opacity: 0;
+    transform: none;
+  }
+}
+
+/* ============================================================
+   FALLOUT SCANLINES EFFECT
+   ============================================================ */
+
+body.theme-fallout::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 9999;
+  background: repeating-linear-gradient(to bottom,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.20) 3px,
+      rgba(0, 0, 0, 0.20) 4px);
+  animation: scanline-flicker 6s infinite;
+}
+
+@keyframes scanline-flicker {
+
+  0%,
+  95%,
+  100% {
+    opacity: 1;
+  }
+
+  96% {
+    opacity: 0.85;
+  }
+
+  97% {
+    opacity: 1;
+  }
+
+  98% {
+    opacity: 0.9;
+  }
+}
