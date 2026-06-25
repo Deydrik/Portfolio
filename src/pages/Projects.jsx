@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import ProjectCard from "../components/ProjectCard";
 
 function Projects() {
@@ -11,7 +12,15 @@ function Projects() {
                     clean architecture, and practical solutions.
                 </p>
             </div>
-
+            
+            {/* <div className="project-card" style={{ textAlign: 'center' }}>
+                <h3>Chimera</h3>
+                <p>A browser-based 2-player combat game inspired by Mail Order Monsters (1985).</p>
+                <Link to="/chimera" className="btn" style={{ marginTop: '1rem', display: 'inline-block' }}>
+                    Play Now
+                </Link>
+            </div> */}
+            
             <div className="projects-grid">
                 <ProjectCard
                     title="NavajoWaterGIS"

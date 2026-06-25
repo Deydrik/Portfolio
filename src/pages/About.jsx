@@ -47,8 +47,8 @@ function About() {
                 <p className="subtitle">
                     Computer Science graduate from Bunker Hill Community College with a
                     focus on Android development and clean architecture. I build
-                    practical, real-world applications — from offline GIS mapping tools
-                    to recipe tracking apps — with an emphasis on maintainable code and
+                    practical, real-world applications. From offline GIS mapping tools
+                    to recipe tracking apps, with an emphasis on maintainable code and
                     thoughtful design.
                 </p>
 
